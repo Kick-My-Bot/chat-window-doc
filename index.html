@@ -1,0 +1,1363 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Chat Window Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-69ce25e5.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-41f7362e.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="https://kickmybot.com">
+        <img src="images/logo-24ff514d.png" class="logo" alt="Logo" />
+      </a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#base-setup" class="toc-h1 toc-link" data-title="Base Setup">Base Setup</a>
+          </li>
+          <li>
+            <a href="#case-1-linked-configuration" class="toc-h1 toc-link" data-title="CASE 1: Linked configuration">CASE 1: Linked configuration</a>
+          </li>
+          <li>
+            <a href="#case-2-custom-configuration" class="toc-h1 toc-link" data-title="CASE 2: Custom configuration">CASE 2: Custom configuration</a>
+          </li>
+          <li>
+            <a href="#required" class="toc-h1 toc-link" data-title="Required">Required</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#serverurl" class="toc-h2 toc-link" data-title="serverUrl">serverUrl</a>
+                  </li>
+                  <li>
+                    <a href="#projectname" class="toc-h2 toc-link" data-title="projectName">projectName</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#style" class="toc-h1 toc-link" data-title="Style">Style</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#primarycolor" class="toc-h2 toc-link" data-title="primaryColor">primaryColor</a>
+                  </li>
+                  <li>
+                    <a href="#secondarycolor" class="toc-h2 toc-link" data-title="secondaryColor">secondaryColor</a>
+                  </li>
+                  <li>
+                    <a href="#windowbackgroundcolor" class="toc-h2 toc-link" data-title="windowBackgroundColor">windowBackgroundColor</a>
+                  </li>
+                  <li>
+                    <a href="#windowbackgroundimage" class="toc-h2 toc-link" data-title="windowBackgroundImage">windowBackgroundImage</a>
+                  </li>
+                  <li>
+                    <a href="#iswhite" class="toc-h2 toc-link" data-title="isWhite">isWhite</a>
+                  </li>
+                  <li>
+                    <a href="#headerbackground" class="toc-h2 toc-link" data-title="headerBackground">headerBackground</a>
+                  </li>
+                  <li>
+                    <a href="#width" class="toc-h2 toc-link" data-title="width">width</a>
+                  </li>
+                  <li>
+                    <a href="#height" class="toc-h2 toc-link" data-title="height">height</a>
+                  </li>
+                  <li>
+                    <a href="#bubblecolor" class="toc-h2 toc-link" data-title="bubbleColor">bubbleColor</a>
+                  </li>
+                  <li>
+                    <a href="#analytics" class="toc-h2 toc-link" data-title="analytics">analytics</a>
+                  </li>
+                  <li>
+                    <a href="#lightmode-beta" class="toc-h2 toc-link" data-title="lightMode (BETA)">lightMode (BETA)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ui" class="toc-h1 toc-link" data-title="UI">UI</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#title" class="toc-h2 toc-link" data-title="title">title</a>
+                  </li>
+                  <li>
+                    <a href="#version" class="toc-h2 toc-link" data-title="version">version</a>
+                  </li>
+                  <li>
+                    <a href="#boticon" class="toc-h2 toc-link" data-title="botIcon">botIcon</a>
+                  </li>
+                  <li>
+                    <a href="#bubbleicon" class="toc-h2 toc-link" data-title="bubbleIcon">bubbleIcon</a>
+                  </li>
+                  <li>
+                    <a href="#displaywelcomepage" class="toc-h2 toc-link" data-title="displayWelcomePage">displayWelcomePage</a>
+                  </li>
+                  <li>
+                    <a href="#welcomemessage" class="toc-h2 toc-link" data-title="welcomeMessage">welcomeMessage</a>
+                  </li>
+                  <li>
+                    <a href="#welcomelinks" class="toc-h2 toc-link" data-title="welcomeLinks">welcomeLinks</a>
+                  </li>
+                  <li>
+                    <a href="#welcomeconfig" class="toc-h2 toc-link" data-title="welcomeConfig">welcomeConfig</a>
+                  </li>
+                  <li>
+                    <a href="#welcometimer" class="toc-h2 toc-link" data-title="welcomeTimer">welcomeTimer</a>
+                  </li>
+                  <li>
+                    <a href="#welcomedelay" class="toc-h2 toc-link" data-title="welcomeDelay">welcomeDelay</a>
+                  </li>
+                  <li>
+                    <a href="#redirectionurl" class="toc-h2 toc-link" data-title="redirectionUrl">redirectionUrl</a>
+                  </li>
+                  <li>
+                    <a href="#tabsconfig" class="toc-h2 toc-link" data-title="tabsConfig">tabsConfig</a>
+                  </li>
+                  <li>
+                    <a href="#lang" class="toc-h2 toc-link" data-title="lang">lang</a>
+                  </li>
+                  <li>
+                    <a href="#hideinput" class="toc-h2 toc-link" data-title="hideInput">hideInput</a>
+                  </li>
+                  <li>
+                    <a href="#enablerecorder" class="toc-h2 toc-link" data-title="enableRecorder">enableRecorder</a>
+                  </li>
+                  <li>
+                    <a href="#enablemobile" class="toc-h2 toc-link" data-title="enableMobile">enableMobile</a>
+                  </li>
+                  <li>
+                    <a href="#registrationkey" class="toc-h2 toc-link" data-title="registrationKey">registrationKey</a>
+                  </li>
+                  <li>
+                    <a href="#menu" class="toc-h2 toc-link" data-title="menu">menu</a>
+                  </li>
+                  <li>
+                    <a href="#animation" class="toc-h2 toc-link" data-title="animation">animation</a>
+                  </li>
+                  <li>
+                    <a href="#welcomewithcv" class="toc-h2 toc-link" data-title="welcomeWithCv">welcomeWithCv</a>
+                  </li>
+                  <li>
+                    <a href="#forcewelcomewithcv" class="toc-h2 toc-link" data-title="forceWelcomeWithCv">forceWelcomeWithCv</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#full-screen" class="toc-h1 toc-link" data-title="Full Screen">Full Screen</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#enablefullscreen" class="toc-h2 toc-link" data-title="enableFullScreen">enableFullScreen</a>
+                  </li>
+                  <li>
+                    <a href="#forcefullscreen" class="toc-h2 toc-link" data-title="forceFullScreen">forceFullScreen</a>
+                  </li>
+                  <li>
+                    <a href="#webpagemode" class="toc-h2 toc-link" data-title="webpageMode">webpageMode</a>
+                  </li>
+                  <li>
+                    <a href="#staticwaves" class="toc-h2 toc-link" data-title="staticWaves">staticWaves</a>
+                  </li>
+                  <li>
+                    <a href="#buttonbackgroundcolor" class="toc-h2 toc-link" data-title="buttonBackgroundColor">buttonBackgroundColor</a>
+                  </li>
+                  <li>
+                    <a href="#background" class="toc-h2 toc-link" data-title="background">background</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#page-customization" class="toc-h1 toc-link" data-title="Page Customization">Page Customization</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#matchpath" class="toc-h2 toc-link" data-title="matchPath">matchPath</a>
+                  </li>
+                  <li>
+                    <a href="#idgetter" class="toc-h2 toc-link" data-title="idGetter">idGetter</a>
+                  </li>
+                  <li>
+                    <a href="#bubbletext" class="toc-h2 toc-link" data-title="bubbleText">bubbleText</a>
+                  </li>
+                  <li>
+                    <a href="#bubblebuttoncolor" class="toc-h2 toc-link" data-title="bubbleButtonColor">bubbleButtonColor</a>
+                  </li>
+                  <li>
+                    <a href="#bubbledelay" class="toc-h2 toc-link" data-title="bubbleDelay">bubbleDelay</a>
+                  </li>
+                  <li>
+                    <a href="#bubbletimer" class="toc-h2 toc-link" data-title="bubbleTimer">bubbleTimer</a>
+                  </li>
+                  <li>
+                    <a href="#fastqr" class="toc-h2 toc-link" data-title="fastQR">fastQR</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#contact" class="toc-h1 toc-link" data-title="Contact">Contact</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>KMBotUI is a custom chat-window for websites. This chat-window is intended to be used with a automated conversation agents (chatbots). It supports a large variety of rich message formats.</p>
+
+<aside class="notice">
+Note: This plug-in can only be used alongside with KMB Labs products.
+</aside>
+
+<p><i>Here is an example of what can be done on the chat-window with this plugin :</i></p>
+
+<p><div class="row">
+  <div class="column">
+    <img src="images/example-Welcome-0ded1575.png"></img>
+  </div>
+  <div class="column">
+    <img src="images/example-CHAT-73a3459f.png"></img><br>
+  </div>
+  <div class="column">
+    <img src="images/example-FAQ-4754f50e.png"></img>
+  </div>
+</div> </p>
+
+<p><br/></p>
+<h1 id='base-setup'>Base Setup</h1><pre class="highlight javascript tab-javascript"><code><span class="kd">function</span> <span class="nx">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">s</span><span class="p">,</span>
+      <span class="nx">r</span><span class="p">,</span>
+      <span class="nx">t</span><span class="p">;</span>
+  <span class="nx">r</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="p">;</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">r</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="s1">'complete'</span><span class="p">)</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="nx">r</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="nx">callback</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+  <span class="nx">t</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'script'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="nx">t</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">t</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">loadScript</span><span class="p">(</span><span class="s2">"https://kick-my-bot.s3-eu-west-1.amazonaws.com/KMBotUI_V2/kmbotui.js.gz"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>  
+  <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">serverUrl</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Insert</span> <span class="nx">your</span> <span class="nx">chatbot</span> <span class="nx">server</span> <span class="nx">URL</span> <span class="nx">here</span> <span class="o">/&gt;</span>
+  <span class="p">};</span>
+  <span class="nx">KMBotUI</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre>
+<p>In your HTML web page, simply add and call the loadScript function written on the right:</p>
+
+<p>This function will load the latest version of the chatbot, without disrupting the loading of the page it is put in. After that, call the loadScript function (see code on the right), and set the callback function as follow. The <code>config</code> variable will be where your options are set.</p>
+
+<p>This is the recommended way to implement the script onto your webpage.</p>
+
+<aside class="warning">
+Note that two options need to be defined in order for the bot to work properly. Those two options are explained below.
+</aside>
+<h1 id='case-1-linked-configuration'>CASE 1: Linked configuration</h1><pre class="highlight javascript tab-javascript"><code>
+  <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">projectKey</span><span class="p">:</span> <span class="nx">your_project_key</span>
+  <span class="p">};</span>
+
+</code></pre>
+<p>In most cases, your window&#39;s configuration will be handled by the KMB Labs team. <br/>
+They will provide you with a <code>projectKey</code> that can be used to display your chat window with a setting built for your website. You can set it inside the <code>config</code> object.
+<br/> It is however possbile for you to set up a custom configuration. Refer to <b>CASE 2</b> for more details.
+<br/>
+<br/></p>
+<h1 id='case-2-custom-configuration'>CASE 2: Custom configuration</h1>
+<p>If you want to have a custom configuration, you can change it directly inside the config object. <br/>
+The options available for customization are explained in the different sections below.</p>
+<h1 id='required'>Required</h1><h2 id='serverurl'>serverUrl</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">serverUrl</span><span class="p">:</span> <span class="s2">"https://my-bot-url.kmblabs.com/"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option corresponds to the chatbot server URL. It is required for the chatbot to work as it will define its behavior.
+<aside class="warning">
+Required
+</aside></p>
+
+<p><br/>
+<br/></p>
+<h2 id='projectname'>projectName</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">projectName</span><span class="p">:</span> <span class="s2">"My_Bot_Project"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option corresponds to the name of the project on the back office, which the questions in the FAQ section will be synchronized with. Usually provided by KMB Labs.
+<aside class="warning">
+Highly Recommended
+</aside></p>
+<h1 id='style'>Style</h1><h2 id='primarycolor'>primaryColor</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">primaryColor</span><span class="p">:</span> <span class="s2">"#24a6f3"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the main color of the chat window (headers, bot message, bot bubble). The color must be in hexadecimal. 
+<aside class="notice">
+<b><u>Default:</u></b> <code>#1abc9c</code>
+</aside>
+<br/></p>
+<h2 id='secondarycolor'>secondaryColor</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">secondaryColor</span><span class="p">:</span> <span class="s2">"#5931bf"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the secondary color of the chat window (quick replies (CTA), buttons). The color must be in hexadecimal. 
+<aside class="notice">
+<b><u>Default:</u></b> <code>same as primaryColor</code>
+</aside>
+<br/></p>
+<h2 id='windowbackgroundcolor'>windowBackgroundColor</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">windowBackgroundColor</span><span class="p">:</span> <span class="s2">"#f1f1f1"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the background color of the message list and the welcome page of the chat window in windowed mode only. The color must be in hexadecimal. 
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside>
+<br/></p>
+<h2 id='windowbackgroundimage'>windowBackgroundImage</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">windowBackgroundImage</span><span class="p">:</span> <span class="s2">"https://the-url-to-your-image.image/image.png"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the background image of the message list and the welcome page of the chat window in windowed mode only. 
+<aside class="notice">
+<b><u>Default:</u></b> <code>default star image</code>
+</aside>
+<br/></p>
+<h2 id='iswhite'>isWhite</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">isWhite</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to <code>true</code>, will make the close button on the top right of the welcome page white. It will be black if set to <code>false</code>. 
+<aside class="notice">
+<b><u>Default:</u></b> <code>true</code>
+</aside>
+<br/></p>
+<h2 id='headerbackground'>headerBackground</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">headerBackground</span><span class="p">:</span> <span class="s2">"https://my-background-url.kmblabs.com/header.png"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option is the URL of the background image you want to put on the header of the welcome page. The standard size is <b>400x250</b>. If no value is set, a <i>primaryColor</i> colored background will be displayed.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+
+<p><img style="display: block; margin:auto" src="images/example-header-54b9a00a.png"></img>
+<br/></p>
+<h2 id='width'>width</h2>
+<p><u>Type:</u> <code>Integer</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the width of the main window in pixels.
+<aside class="notice">
+<b><u>Default:</u></b> <code>400</code>
+</aside>
+<br/></p>
+<h2 id='height'>height</h2>
+<p><u>Type:</u> <code>Integer</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="mi">700</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the height of the main window in pixels.
+<aside class="notice">
+<b><u>Default:</u></b> <code>700</code>
+</aside>
+<br/></p>
+<h2 id='bubblecolor'>bubbleColor</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">bubbleColor</span><span class="p">:</span> <span class="s2">"#dedede"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the speech bubble color. This option is only considered if welcomeMessage is set.
+<aside class="notice">
+<b><u>Default:</u></b> <code>#8f8f8f</code>
+</aside>
+<br/></p>
+<h2 id='analytics'>analytics</h2>
+<p><u>Type:</u> <code>Object</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">analytics</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">quickreplies</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+    <span class="p">},</span>
+      <span class="nx">items</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option can contain two keys : <code>quickreplies</code> and <code>items</code>. These two keys are user-defined functions that run when the user clicks on a quickreply or an item in a carousel (cards). The functions take the title of the selected element as a parameter. The analytics can be used to perform analytics actions.
+<aside class="notice">
+<b><u>Default:</u></b> <code>null</code>
+</aside>
+<br/></p>
+<h2 id='lightmode-beta'>lightMode (BETA)</h2>
+<p><u>Type:</u> <code>boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">lightMode</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if sets to <code>true</code>, activates the light mode in fullscreen mode, which sets text font to black, and adds a black background to each message.<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside></p>
+
+<p><img style="display: block; margin:auto" src="images/example-lightMode-6edc66de.png"></img>
+<br/>
+<br/>
+<br/></p>
+<h1 id='ui'>UI</h1><h2 id='title'>title</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="s2">"Hello, I'm BOT the bot"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the text that will be displayed in the chat window header. 
+<aside class="notice">
+<b><u>Default:</u></b> <code>KMB Labs</code>
+</aside>
+<br/></p>
+<h2 id='version'>version</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">version</span><span class="p">:</span> <span class="s2">"V4_a"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the chatbot UI version.
+<aside class="notice">
+<b><u>Default:</u></b> <code>last version available</code>
+</aside>
+<br/></p>
+<h2 id='boticon'>botIcon</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">botIcon</span><span class="p">:</span> <span class="s2">"https://my-bot-icon-url.kmblabs.com/icon.png"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the main chatbot&#39;s image path. You can specify a remote or local image.
+<aside class="notice">
+<b><u>Default:</u></b> <code>(displays the KMB Labs mascot)</code>
+</aside>
+<br/></p>
+<h2 id='bubbleicon'>bubbleIcon</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">bubbleIcon</span><span class="p">:</span> <span class="s2">"https://my-bubble-icon-url.kmblabs.com/icon.png"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the image to appears in the chat bubble when the window is closed. You can specify a remote or local image.</p>
+
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+<p><img style="display: block; margin:auto" src="images/example-bubbleIcon-97a8bac5.png"></img>
+<br/></p>
+<h2 id='displaywelcomepage'>displayWelcomePage</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">displayWelcomePage</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to <code>true</code>, displays a welcome page when a user opens the chatbot.
+<aside class="notice">
+<b><u>Default:</u></b> <code>true</code>
+</aside>
+<br/></p>
+<h2 id='welcomemessage'>welcomeMessage</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">welcomeMessage</span><span class="p">:</span> <span class="s2">"Hello, I'm BOT. How may I help you ? 🙂"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the text that will be displayed after some time in the speech bubble when the chat window is closed. Do no set if you don&#39;t want this additional feature.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside>
+<br/></p>
+<h2 id='welcomelinks'>welcomeLinks</h2>
+<p><u>Type:</u> <code>Array</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">welcomeLinks</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+    <span class="p">{</span>
+      <span class="nl">type</span><span class="p">:</span> <span class="s2">"facebook"</span><span class="p">,</span>
+      <span class="nx">url</span><span class="p">:</span> <span class="s2">"https://www.facebook.com/MyFacebookGroup"</span><span class="p">,</span>
+      <span class="nx">displayInHeader</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">icon</span><span class="p">:</span> <span class="s2">"https://my-custom-website-icon.com/icon.png"</span><span class="p">,</span>
+      <span class="na">url</span><span class="p">:</span> <span class="s2">"https://www.my-website.com/"</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the list of links you want to display on the welcome page and at the top left in fullscreen mode. Links are objects with a <code>type</code> key and a <code>url</code> key (for the link to your desired website).
+If you want to use a custom icon, you can replace the <code>type</code> key with an <code>icon</code> and give your custom icon URL as a value.
+<br/>You can optionally add a <code>displayInHeader</code> key with a boolean value. If set to <code>true</code>, the icon will also appear in the header in windowed mode.</p>
+
+<p>Allowed values for the <code>type</code> key : <br/>
+<code>facebook</code>
+- <code>linkedin</code>
+- <code>twitter</code>
+- <code>instagram</code>
+- <code>snapchat</code>
+- <code>youtube</code>
+- <code>pinterest</code>
+- <code>reddit</code>
+- <code>whatsapp</code>
+- <code>steam</code>
+<br/>
+<br/>
+6 links is the maximum for an optimal responsive behavior.</p>
+
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+<p><img style="display: block; margin:auto" src="images/example-welcome-links-db003e91.png"></img>
+<br/></p>
+<h2 id='welcomeconfig'>welcomeConfig</h2>
+<p><u>Type:</u> <code>Object</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">welcomeConfig</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">welcomeTitle</span><span class="p">:</span> <span class="s2">"Hello, &lt;br/&gt; I'm displayed on the &lt;b&gt;Welcome page&lt;/b&gt; and the &lt;b&gt;FullScreen intro message&lt;/b&gt;."</span><span class="p">,</span>
+    <span class="nx">welcomeSubtitle</span><span class="p">:</span> <span class="s2">"Click on &amp;quot;Start&amp;quot; to start !"</span>
+  <span class="p">},</span> 
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option is an object that sets the introducing message you want to display on the welcome page. On the windowed version, the <code>welcomeTitle</code> and the <code>welcomeSubtitle</code> will be displayed. If no <code>welcomeSubtitle</code> is set, a default message will be displayed (&#39;Cliquez sur le bouton &quot;Démarrer&quot; pour commencer à discuter avec moi !&#39;) On the full screen version, only the <code>welcomeTitle</code> will be displayed as an introductive message to the conversation. HTML is supported.
+<aside class="notice">
+<b><u>Default:</u></b> <code>{
+    welcomeTitle: &quot;Hello&quot;,
+    welcomeSubtitle: &quot;&quot;
+  }</code>
+</aside></p>
+
+<p>These pictures show respectively the result of the configuration example on the windowed welcome page and on the full screen introductive message.</p>
+
+<p><img style="display: block; margin:auto" src="images/example-welcome-page-text-9c3cbdd2.png"></img>
+<br/>
+<img style="display: block; margin:auto" src="images/docs-fullscreen-welcome-6340f0ab.png"></img></p>
+
+<p><br/></p>
+<h2 id='welcometimer'>welcomeTimer</h2>
+<p><u>Type:</u> <code>Integer</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">welcomeTimer</span><span class="p">:</span> <span class="mi">10</span><span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="c1">// 10 seconds</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the time period (in ms) during which the speech bubble (welcome message) is displayed.
+<aside class="notice">
+<b><u>Default:</u></b> <code>5000</code>
+</aside>
+<br/></p>
+<h2 id='welcomedelay'>welcomeDelay</h2>
+<p><u>Type:</u> <code>Integer</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">welcomeDelay</span><span class="p">:</span> <span class="mi">12000</span><span class="p">,</span> <span class="c1">// 12 seconds</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the delay (in ms) before displaying the speech bubble (welcome message).
+<aside class="notice">
+<b><u>Default:</u></b> <code>10000</code>
+</aside>
+<br/></p>
+<h2 id='redirectionurl'>redirectionUrl</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">redirectionUrl</span><span class="p">:</span> <span class="s2">"http://www.facebook.com/MyBotPage"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the URL of a Facebook Messenger chatbot. This option will display a messenger icon in the chatbox&#39;s header.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside>
+<br/></p>
+<h2 id='tabsconfig'>tabsConfig</h2>
+<p><u>Type:</u> <code>Object</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">tabsConfig</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">CHAT</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">title</span><span class="p">:</span> <span class="s2">"Hello, I'm BOT the bot"</span>
+    <span class="p">},</span>
+    <span class="nx">FAQ</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">title</span><span class="p">:</span> <span class="s2">"Frequently asked questions"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the configuration for each tab with two keys <code>CHAT</code> and <code>FAQ</code> and within those keys an <code>object</code> with a <code>title</code> key that will be the title displayed in the chat header for each tab (required). This option overrides the <code>title</code> option defined above.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+
+<p>These pictures show the result of the example configuration for the <code>CHAT</code> and <code>FAQ</code> tab header respectively :</p>
+
+<p><img style="display: block; margin:auto" src="images/example-tabs-config-chat-9df89f79.png"></img>
+<br/></p>
+<h2 id='lang'>lang</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">lang</span><span class="p">:</span> <span class="s2">"en"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the language used for keywords.
+<aside class="notice">
+<b><u>Default:</u></b> <code>fr</code>
+</aside>
+<br/></p>
+<h2 id='hideinput'>hideInput</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">hideInput</span><span class="p">:</span> <span class="s2">"false"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to <code>true</code>, will hide the user input at the bottom of the chat window (for quickreply use only, for example).
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside>
+<br/></p>
+<h2 id='enablerecorder'>enableRecorder</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">enableRecorder</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to true, will display a button in the input area ,allowing speech recording and recognition. 
+<aside class="notice">
+<b><u>Default:</u></b> <code>true</code>
+</aside></p>
+
+<p>The picture below shows the <i>microphone</i> icon displayed in the input area when the option is set to <code>true</code> :</p>
+
+<p><img style="display: block; margin:auto" src="images/example-recorder-f5616e24.png">
+</img>
+<br/></p>
+<h2 id='enablemobile'>enableMobile</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">enableMobile</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to <code>true</code>, allows the chatbot to be displayed on mobile devices.
+<aside class="notice">
+<b><u>Default:</u></b> <code>true</code>
+</aside>
+<br/></p>
+<h2 id='registrationkey'>registrationKey</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">registration</span><span class="p">:</span> <span class="s2">"A_Registation_Key"</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if an authorized key is set, will hide the &quot;Powered By KMB Labs&quot; block under the input area. You can ask for a valid key by contacting the following address : <a href="mailto:contact@kickmybot.com">contact@kickmybot.com</a>
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+
+<p><img style="display: block; margin:auto" src="images/example-poweredBy-186936c4.png">
+<br/></p>
+<h2 id='menu'>menu</h2>
+<p><u>Type:</u> <code>Array</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">menu</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+    <span class="p">{</span>
+      <span class="nl">type</span><span class="p">:</span> <span class="s2">"postback"</span><span class="p">,</span>
+      <span class="nx">title</span><span class="p">:</span> <span class="s2">"Relancer 🔃"</span><span class="p">,</span>
+      <span class="nx">payload</span><span class="p">:</span> <span class="s2">"SOME_POSTBACK"</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">]</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the content for the persitent menu, which following the Facebook Messenger API format (see here: https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api/persistent-menu). Usually provided by KMB Labs.
+<aside class="notice">
+<b><u>Default:</u></b> <code>true</code>
+</aside>
+<img style="display: block; margin:auto" src="images/example-menu-33a641a6.png">
+</img>
+<br/></p>
+<h2 id='animation'>animation</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to <code>true</code>, will make the launcher icon animated (small bounce effect). Set to <code>false</code> if you want to turn this effect off. Do not hesitate to define your own CSS animation if you want to.
+<aside class="notice">
+<b><u>Default:</u></b> <code>true</code>
+</aside>
+<br/></p>
+<h2 id='welcomewithcv'>welcomeWithCv</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">welcomeWithCv</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to <code>true</code>, will make it available to send a CV through the welcome page. It can be used by dragging and dropping your file inside the dropzone.
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside></p>
+<h2 id='forcewelcomewithcv'>forceWelcomeWithCv</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">forceWelcomeWithCv</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to <code>true</code>, will only put the dropzone inside the welcome page, and remove the &quot;Start&quot; button. The only way to start the conversation would be to drag and drop a CV inside the dropzone of the welcome page.
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside></p>
+<h1 id='full-screen'>Full Screen</h1><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">enableFullScreen</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">forceFullScreen</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">background</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">main</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">outside</span><span class="p">:</span><span class="s2">"#000"</span><span class="p">,</span>
+        <span class="nx">middle</span><span class="p">:</span><span class="s2">"#113862"</span><span class="p">,</span>
+        <span class="nx">inside</span><span class="p">:</span><span class="s2">"#4498ff"</span>
+      <span class="p">},</span>
+      <span class="nx">waves</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">top</span><span class="p">:</span> <span class="s2">"#53b4fb"</span><span class="p">,</span>
+        <span class="nx">bottom</span><span class="p">:</span> <span class="s2">"#3c6477"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>In order to set the configuration for the full screen mode, a <code>fullScreen</code> key must be added</p>
+
+<p><u>Type:</u> <code>Object</code></p>
+
+<p>Here is the result of the example full screen configuration : </p>
+
+<p><img style="display: block; margin:auto" src="images/example-fullscreen-a94610af.png"></img>
+<br/></p>
+<h2 id='enablefullscreen'>enableFullScreen</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">enableFullScreen</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to true, will enable full screen mode and all of its options for your chatbot. Full screen can only be enabled with a valid <code>registrationKey</code> (provided by KMB Labs)
+<aside class="notice">
+<b><u>Default:</u></b> <code>true</code>
+</aside></p>
+<h2 id='forcefullscreen'>forceFullScreen</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">forceFullScreen</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to true, will disable windowed mode for the chatbot, and it will only be available in full screen mode.
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside></p>
+<h2 id='webpagemode'>webpageMode</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">webpageMode</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to true, will set the chatbot in webpage mode, meaning that full screen mode will be active all the time, and the conversation will immediately starts.
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside></p>
+<h2 id='staticwaves'>staticWaves</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">staticWaves</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to true, will disable the animation of the waves in full screen mode.
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside></p>
+<h2 id='buttonbackgroundcolor'>buttonBackgroundColor</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+        <span class="nl">buttonBackgroundColor</span><span class="p">:</span> <span class="s2">"#24a6f3"</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the background color of the buttons in full screen mode.
+<aside class="notice">
+<b><u>Default:</u></b> <code>#1abc9c</code>
+</aside></p>
+<h2 id='background'>background</h2>
+<p><u>Type:</u> <code>Object</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">main</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">outside</span><span class="p">:</span><span class="s2">"#000"</span><span class="p">,</span>
+        <span class="nx">middle</span><span class="p">:</span><span class="s2">"#113862"</span><span class="p">,</span>
+        <span class="nx">inside</span><span class="p">:</span><span class="s2">"#4498ff"</span>
+      <span class="p">},</span>
+      <span class="nx">waves</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">top</span><span class="p">:</span> <span class="s2">"#53b4fb"</span><span class="p">,</span>
+        <span class="nx">bottom</span><span class="p">:</span> <span class="s2">"#3c6477"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>background</code> is an object that sets the color parameters or the full screen background. Two objects are defined inside to set the colors :
+<br/>
+<br/>
+- <code>main</code> is an object with 3 keys <code>inside</code>, <code>middle</code> and <code>outside</code> that will set the colors of the background, which is a 3-color radial gradient. <code>inside</code> sets the inner-circle color. <code>middle</code> sets the middle circle color, which is the most dominant color. <code>outside</code> sets the outside-circle color, on the borders.
+<br/>
+<br/>
+- <code>waves</code> is an object with 2 keys <code>top</code> and <code>bottom</code> that will set the colors of the bottom waves, are a 2-color linear gradient from top to bottom. <code>top</code> / <code>bottom</code> sets the color of the top/bottom gradient.
+<aside class="notice">
+<b><u>Default:</u></b> <code>{
+                main: {
+                    outside: &quot;#2c5b93&quot;,
+                    middle: &quot;#113862&quot;,
+                    inside: &quot;#0f4c81&quot;
+                },
+                waves: {
+                    top: &quot;#53b4fb&quot;,
+                    bottom: &quot;#3c6477&quot;
+                }
+            }</code>
+</aside></p>
+
+<p>These pictures show the result of the example configuration for the <code>background</code> :</p>
+
+<p><img style="display: block; margin:auto" src="images/docs-fullscreen-d96d8660.png"></img></p>
+
+<p><br/></p>
+<h1 id='page-customization'>Page Customization</h1><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+    <span class="p">{</span>
+      <span class="nl">matchPath</span><span class="p">:</span><span class="s2">"commercial"</span><span class="p">,</span>
+      <span class="nx">idGetter</span><span class="p">:</span> <span class="s2">"commercial/offer/(.*?)/infos"</span><span class="p">,</span>
+      <span class="nx">bubbleText</span><span class="p">:</span><span class="s2">"&lt;b&gt;Welcome !&lt;/b&gt;&lt;br/&gt; I see you are
+      interested by our commercial offer. What
+      do you want to do ?"</span><span class="p">,</span>
+      <span class="nx">bubbleButtonColor</span><span class="p">:</span><span class="s2">"#0f4c81"</span><span class="p">,</span>
+      <span class="nx">bubbleDelay</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="nx">bubbleTimer</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span>
+      <span class="nx">fastQR</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">type</span><span class="p">:</span> <span class="s2">"postback_bubble"</span><span class="p">,</span>
+          <span class="na">title</span><span class="p">:</span><span class="s2">"I want to apply"</span><span class="p">,</span>
+          <span class="na">payload</span><span class="p">:</span><span class="s2">"HOW_TO_APPLY_POSTBACK"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">type</span><span class="p">:</span> <span class="s2">"postback_bubble"</span><span class="p">,</span>
+          <span class="na">title</span><span class="p">:</span><span class="s2">"I want more information"</span><span class="p">,</span>
+          <span class="na">payload</span><span class="p">:</span><span class="s2">"FAQ_${id}_POSTBACK"</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>In order to customize the window depending on the page it is on, a <code>pageCustomization</code> key can be added.</p>
+
+<p><u>Type:</u> <code>Array of Objects</code></p>
+
+<p>Here is the result of the example pageCustomization configuration on a fictive page www.kmblabs.com/commercial/offer/541/infos : </p>
+
+<p><img style="display: block; margin:auto" src="images/example-pageCustomization-cdcb789b.png"></img>
+<br/></p>
+<h2 id='matchpath'>matchPath</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">matchPath</span><span class="p">:</span> <span class="s2">"commercial"</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option corresponds to the page in which the customization is applied. The value can be a substring or a regex that matches the URL of the page.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+<h2 id='idgetter'>idGetter</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">idGetter</span><span class="p">:</span> <span class="s2">"commercial/offer/(.*?)/infos"</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option is a regex to retrieve an ID inside the URL in order to set a custom postback for the chatbot&#39;s answer.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+<h2 id='bubbletext'>bubbleText</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">bubbleText</span><span class="p">:</span> <span class="s2">"&lt;b&gt;Welcome on kmblabs.com !
+    What are you looking for ?&lt;/b&gt;"</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the text displayed inside the speech bubble.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+<h2 id='bubblebuttoncolor'>bubbleButtonColor</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">bubbleButtonColor</span><span class="p">:</span> <span class="s2">"#0f4c81"</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the color of the speech bubble buttons (for fast QRs).
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+<h2 id='bubbledelay'>bubbleDelay</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">bubbleDelay</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the time after which the speech bubble will appear.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+<h2 id='bubbletimer'>bubbleTimer</h2>
+<p><u>Type:</u> <code>String</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">bubbleTimer</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the time after which the speech bubble will disappear.
+<aside class="notice">
+<b><u>Default:</u></b> <code>none</code>
+</aside></p>
+<h2 id='fastqr'>fastQR</h2>
+<p><u>Type:</u> <code>Array</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">fastQR</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">...</span>
+      <span class="p">{</span>
+        <span class="nl">type</span><span class="p">:</span> <span class="s2">"postback_bubble"</span><span class="p">,</span>
+        <span class="nx">title</span><span class="p">:</span><span class="s2">"I want to apply"</span><span class="p">,</span>
+        <span class="nx">payload</span><span class="p">:</span><span class="s2">"HOW_TO_APPLY_POSTBACK"</span>
+      <span class="p">},</span>
+      <span class="p">...</span>
+    <span class="p">]</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>fastQR</code> is an array that allows to customize the buttons under the speech bubble. It has 3 keys :
+<br/>
+<br/>
+- <code>type</code> is a string that sets the type of the button. Typically, it is set as <code>postback_bubble</code> and it will send a message in the conversation, by displaying the <code>title</code> as the message (with a <code>payload</code> if set).
+<br/>
+<br/>
+- <code>title</code> is a string that sets the text on the button. It also is the message displayed in the conversation when clicked.
+<br/>
+<br/>
+- <code>payload</code> is a string that sets the payload sent to the server with the message.</p>
+
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+<p><br/>
+<br/></p>
+
+<!-- 
+        "welcomePageText",
+        "welcomeTimer",
+        "welcomeDelay",
+        "redirectionUrl",
+        "serverUrl",
+        "extraChatOptions",
+        "displayWelcomePage",
+        "tabsConfig",
+        "lang",
+        "hideInput",
+        "enableRecorder",
+        "enableMobile",
+        "registrationKey",
+        "menu",
+        "projectName" -->
+<h1 id='contact'>Contact</h1>
+<p>For all requests/suggestions and support, do not hesitate to contact us at <a href="mailto:contact@kickmybot.com">contact@kickmybot.com</a></p>
+
+<p><br/>
+<br/>
+<br/></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
