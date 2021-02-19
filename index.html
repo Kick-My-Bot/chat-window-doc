@@ -347,6 +347,9 @@
                   <li>
                     <a href="#forcewelcomewithcv" class="toc-h2 toc-link" data-title="forceWelcomeWithCv">forceWelcomeWithCv</a>
                   </li>
+                  <li>
+                    <a href="#usesuggestions" class="toc-h2 toc-link" data-title="useSuggestions">useSuggestions</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -450,7 +453,7 @@ Note: This plug-in can only be used alongside with KMB Labs products.
   <span class="nx">t</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">t</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">loadScript</span><span class="p">(</span><span class="s2">"https://kick-my-bot.s3-eu-west-1.amazonaws.com/KMBotUI_V2/kmbotui.js.gz"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>  
+<span class="nx">loadScript</span><span class="p">(</span><span class="s2">"https://d1986lffsl15jz.cloudfront.net/KMBotUI_V2/kmbotui.js.gz"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>  
   <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">serverUrl</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Insert</span> <span class="nx">your</span> <span class="nx">chatbot</span> <span class="nx">server</span> <span class="nx">URL</span> <span class="nx">here</span> <span class="o">/&gt;</span>
   <span class="p">};</span>
@@ -1010,6 +1013,20 @@ If you want to use a custom icon, you can replace the <code>type</code> key with
 <aside class="notice">
 <b><u>Default:</u></b> <code>false</code>
 </aside></p>
+<h2 id='usesuggestions'>useSuggestions</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">useSuggestions</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option enables on-flight auto-suggestions of questions based on the message being typed by the user.
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside>
+<br/>
+<br/></p>
 <h1 id='full-screen'>Full Screen</h1><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
   <span class="p">...</span>
   <span class="nl">fullScreen</span><span class="p">:</span> <span class="p">{</span>
