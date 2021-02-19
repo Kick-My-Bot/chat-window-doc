@@ -56,7 +56,7 @@ function loadScript(src, callback) {
   t.parentNode.insertBefore(s, t);
 }
 
-loadScript("https://kick-my-bot.s3-eu-west-1.amazonaws.com/KMBotUI_V2/kmbotui.js.gz", function () {  
+loadScript("https://d1986lffsl15jz.cloudfront.net/KMBotUI_V2/kmbotui.js.gz", function () {  
   var config = {
     serverUrl: <Insert your chatbot server URL here />
   };
@@ -778,6 +778,24 @@ This option, if set to `true`, will only put the dropzone inside the welcome pag
 <aside class="notice">
 <b><u>Default:</u></b> `false`
 </aside>
+
+## useSuggestions
+<u>Type:</u> `Boolean`
+
+```javascript
+{
+    ...
+  useSuggestions: true
+    ...
+}
+```
+
+This option enables on-flight auto-suggestions of questions based on the message being typed by the user.
+<aside class="notice">
+<b><u>Default:</u></b> `false`
+</aside>
+<br/>
+<br/>
 
 # Full Screen
 
