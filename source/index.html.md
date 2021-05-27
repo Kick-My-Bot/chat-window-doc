@@ -296,27 +296,31 @@ This option sets the speech bubble color. This option is only considered if welc
 </aside>
 <br/>
 
-## analytics
-<u>Type:</u> `Object`
+## useAnalytics
+<u>Type:</u> `boolean`
 
 ```javascript
 {
   ...
-  analytics: {
-      quickreplies: function(title) {
-         console.log(title);
-    },
-      items: function(title) {
-         console.log(title);
-    }
-    },
+  useAnalytics: true,
   ...
 }
 ```
 
-This option can contain two keys : `quickreplies` and `items`. These two keys are user-defined functions that run when the user clicks on a quickreply or an item in a carousel (cards). The functions take the title of the selected element as a parameter. The analytics can be used to perform analytics actions.
+This option, if set to `true`, will dispatch an event each time the user clicked on a button. Add the following event listener wherever you want to retrieve the data :
+<br/>
+<br/>
+<code style="display: block; white-space: pre-wrap">window.addEventListener("chatbot-analytic-event", (e) => {
+    var title = e.detail.title
+    var data = e.detail.data
+    // Add your logic here
+});
+</code>
+<br/>
+where `title` is the title of the button or quick reply clicked and where `data` is the information about the button (URL, postback, type etc...).
+
 <aside class="notice">
-<b><u>Default:</u></b> `null`
+<b><u>Default:</u></b> `false`
 </aside>
 <br/>
 
@@ -337,6 +341,8 @@ This option, if sets to `true`, activates the light mode in fullscreen mode, whi
 
 <img style="display: block; margin:auto" src="../images/example-lightMode.png"></img>
 <br/>
+
+
 <br/>
 <br/>
 
