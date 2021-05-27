@@ -274,7 +274,7 @@
                     <a href="#bubblecolor" class="toc-h2 toc-link" data-title="bubbleColor">bubbleColor</a>
                   </li>
                   <li>
-                    <a href="#analytics" class="toc-h2 toc-link" data-title="analytics">analytics</a>
+                    <a href="#useanalytics" class="toc-h2 toc-link" data-title="useAnalytics">useAnalytics</a>
                   </li>
                   <li>
                     <a href="#lightmode-beta" class="toc-h2 toc-link" data-title="lightMode (BETA)">lightMode (BETA)</a>
@@ -630,26 +630,31 @@ Highly Recommended
 <b><u>Default:</u></b> <code>#8f8f8f</code>
 </aside>
 <br/></p>
-<h2 id='analytics'>analytics</h2>
-<p><u>Type:</u> <code>Object</code></p>
+<h2 id='useanalytics'>useAnalytics</h2>
+<p><u>Type:</u> <code>boolean</code></p>
 <pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
   <span class="p">...</span>
-  <span class="nl">analytics</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nl">quickreplies</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
-    <span class="p">},</span>
-      <span class="nx">items</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="p">},</span>
+  <span class="nl">useAnalytics</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="p">...</span>
 <span class="p">}</span>
 </code></pre>
-<p>This option can contain two keys : <code>quickreplies</code> and <code>items</code>. These two keys are user-defined functions that run when the user clicks on a quickreply or an item in a carousel (cards). The functions take the title of the selected element as a parameter. The analytics can be used to perform analytics actions.
+<p>This option, if set to <code>true</code>, will dispatch an event each time the user clicked on a button. Add the following event listener wherever you want to retrieve the data :
+<br/>
+<br/>
+<code style="display: block; white-space: pre-wrap">window.addEventListener(&quot;chatbot-analytic-event&quot;, (e) =&gt; {
+    var title = e.detail.title
+    var data = e.detail.data
+    // Add your logic here
+});
+</code>
+<br/>
+where <code>title</code> is the title of the button or quick reply clicked and where <code>data</code> is the information about the button (URL, postback, type etc...).</p>
+
 <aside class="notice">
-<b><u>Default:</u></b> <code>null</code>
+<b><u>Default:</u></b> `false`
 </aside>
-<br/></p>
+
+<p><br/></p>
 <h2 id='lightmode-beta'>lightMode (BETA)</h2>
 <p><u>Type:</u> <code>boolean</code></p>
 <pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
@@ -663,8 +668,9 @@ Highly Recommended
 </aside></p>
 
 <p><img style="display: block; margin:auto" src="images/example-lightMode-6edc66de.png"></img>
-<br/>
-<br/>
+<br/></p>
+
+<p><br/>
 <br/></p>
 <h1 id='ui'>UI</h1><h2 id='title'>title</h2>
 <p><u>Type:</u> <code>String</code></p>
