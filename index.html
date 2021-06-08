@@ -1326,6 +1326,7 @@ If you want to use a custom icon, you can replace the <code>type</code> key with
         <span class="nl">type</span><span class="p">:</span> <span class="s2">"postback_bubble"</span><span class="p">,</span>
         <span class="nx">title</span><span class="p">:</span><span class="s2">"I want to apply"</span><span class="p">,</span>
         <span class="nx">payload</span><span class="p">:</span><span class="s2">"HOW_TO_APPLY_POSTBACK"</span>
+        <span class="c1">// or url: "https://custom-url.url"</span>
       <span class="p">},</span>
       <span class="p">...</span>
     <span class="p">]</span>
@@ -1337,13 +1338,17 @@ If you want to use a custom icon, you can replace the <code>type</code> key with
 <p><code>fastQR</code> is an array that allows to customize the buttons under the speech bubble. It has 3 keys :
 <br/>
 <br/>
-- <code>type</code> is a string that sets the type of the button. Typically, it is set as <code>postback_bubble</code> and it will send a message in the conversation, by displaying the <code>title</code> as the message (with a <code>payload</code> if set).
+- <code>type</code> is a string that sets the type of the button. It must always be set to <code>postback_bubble</code>
 <br/>
 <br/>
-- <code>title</code> is a string that sets the text on the button. It also is the message displayed in the conversation when clicked.
+- <code>title</code> is a string that sets the text on the button. It also is the message displayed in the conversation when clicked if the button opens the chat window.
 <br/>
 <br/>
-- <code>payload</code> is a string that sets the payload sent to the server with the message.</p>
+- <code>payload</code> is a string that sets the payload sent to the server with the message. Exclusive with <code>url</code>.
+<br/>
+OR
+<br/>
+- <code>url</code> is a string that sets the URL the button will redirect to. Exclusive with <code>payload</code>.</p>
 
 <aside class="notice">
 <b><u>Default:</u></b> `none`
