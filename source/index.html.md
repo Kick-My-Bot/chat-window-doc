@@ -1155,6 +1155,7 @@ This option sets the time after which the speech bubble will disappear.
         type: "postback_bubble",
         title:"I want to apply",
         payload:"HOW_TO_APPLY_POSTBACK"
+        // or url: "https://custom-url.url"
       },
       ...
     ]
@@ -1167,13 +1168,17 @@ This option sets the time after which the speech bubble will disappear.
 `fastQR` is an array that allows to customize the buttons under the speech bubble. It has 3 keys :
 <br/>
 <br/>
-- `type` is a string that sets the type of the button. Typically, it is set as `postback_bubble` and it will send a message in the conversation, by displaying the `title` as the message (with a `payload` if set).
+- `type` is a string that sets the type of the button. It must always be set to `postback_bubble`
 <br/>
 <br/>
-- `title` is a string that sets the text on the button. It also is the message displayed in the conversation when clicked.
+- `title` is a string that sets the text on the button. It also is the message displayed in the conversation when clicked if the button opens the chat window.
 <br/>
 <br/>
-- `payload` is a string that sets the payload sent to the server with the message.
+- `payload` is a string that sets the payload sent to the server with the message. Exclusive with `url`.
+<br/>
+OR
+<br/>
+- `url` is a string that sets the URL the button will redirect to. Exclusive with `payload`.
 
 <aside class="notice">
 <b><u>Default:</u></b> `none`
