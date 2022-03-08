@@ -800,6 +800,55 @@ This option enables on-flight auto-suggestions of questions based on the message
 <aside class="notice">
 <b><u>Default:</u></b> `false`
 </aside>
+
+## daysBeforeDisplayFastQR
+<u>Type:</u> `Number`
+
+```javascript
+{
+    ...
+  daysBeforeDisplayFastQR: 24
+    ...
+}
+```
+
+This option sets the number of days after which Fast QRs will be displayed again when it has been closed.
+<aside class="notice">
+<b><u>Default:</u></b> `0`
+</aside>
+
+## daysBeforeReset
+<u>Type:</u> `Number`
+
+```javascript
+{
+    ...
+  daysBeforeReset: 12
+    ...
+}
+```
+
+This option sets the number of days since last visit after which chat-window's messages and local data will be deleted
+<aside class="notice">
+<b><u>Default:</u></b> `30`
+</aside>
+
+## daysBeforeResetID
+<u>Type:</u> `Number`
+
+```javascript
+{
+    ...
+  daysBeforeResetID: 14
+    ...
+}
+```
+
+This option sets the number of days since last visit after which chat-window's local sessionId will be renewed.
+<aside class="notice">
+<b><u>Default:</u></b> `30`
+</aside>
+
 <br/>
 <br/>
 
@@ -1165,7 +1214,7 @@ This option sets the time after which the speech bubble will disappear.
 }
 ```
 
-`fastQR` is an array that allows to customize the buttons under the speech bubble. It has 3 keys :
+`fastQR` is an array of object that allows to customize the buttons under the speech bubble. Each object has 3 keys :
 <br/>
 <br/>
 - `type` is a string that sets the type of the button. It must always be set to `postback_bubble`
@@ -1183,6 +1232,78 @@ OR
 <aside class="notice">
 <b><u>Default:</u></b> `none`
 </aside>
+
+## disableMobileFastQR
+<u>Type:</u> `Boolean`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    disableMobileFastQR: true,
+    ...
+  }
+}
+```
+
+This option, if set to true, disables fastQRs on mobile and small sized windows.
+<aside class="notice">
+<b><u>Default:</u></b> `false`
+</aside>
+
+## fastFileDropConfig
+<u>Type:</u> `Object`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    fastFileDropConfig: {
+      enable: true,
+      title: "Match your CV here",
+      customText: "Match CV",
+        enable: false,
+        type: "location",
+        text: "Offers near you 📍"
+      }
+    },
+    ...
+  }
+  ...
+}
+```
+
+`fastFileDropConfig` is an object that allows to display a dropzone on the left of chat-window's bubble when closed (exclusive with `fastQR`). It has 4 keys :
+<br/>
+<br/>
+- `enable` is a boolean that activates or deactivates this feature (default: `false`)
+<br/>
+<br/>
+- `title` is a string that sets the text on top of the dropzone. If this option is not set, the default text will be displayed. (default: `You can submit your CV to start a new search`)
+<br/>
+<br/>
+- `customText` is a string that sets the text inside the dropzone. If this option is not set, the default text will be displayed. (default: `Déposez ici !`)
+<br/>
+<br/>
+- `action` is an object that sets an eventual custom action under the dropzone. It has 3 keys :
+<br/>
+&nbsp;&nbsp;-- `enable` is a boolean that activates or deactivates this feature (default: `false`)
+<br/>
+&nbsp;&nbsp;-- `type` is a string that sets the type of the action (default: `none`, only `location` is supported for now, which allows to locate user and start a search for offers)
+<br/>
+&nbsp;&nbsp;-- `text` is a string that sets the text displayed in the action button. (default: `none`)
+<br/>
+
+
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+<img style="display: block; margin:auto" src="../images/example-fastFileDropConfig.png">
+
+
 <br/>
 <br/>
 
