@@ -350,6 +350,15 @@
                   <li>
                     <a href="#usesuggestions" class="toc-h2 toc-link" data-title="useSuggestions">useSuggestions</a>
                   </li>
+                  <li>
+                    <a href="#daysbeforedisplayfastqr" class="toc-h2 toc-link" data-title="daysBeforeDisplayFastQR">daysBeforeDisplayFastQR</a>
+                  </li>
+                  <li>
+                    <a href="#daysbeforereset" class="toc-h2 toc-link" data-title="daysBeforeReset">daysBeforeReset</a>
+                  </li>
+                  <li>
+                    <a href="#daysbeforeresetid" class="toc-h2 toc-link" data-title="daysBeforeResetID">daysBeforeResetID</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -398,6 +407,12 @@
                   </li>
                   <li>
                     <a href="#fastqr" class="toc-h2 toc-link" data-title="fastQR">fastQR</a>
+                  </li>
+                  <li>
+                    <a href="#disablemobilefastqr" class="toc-h2 toc-link" data-title="disableMobileFastQR">disableMobileFastQR</a>
+                  </li>
+                  <li>
+                    <a href="#fastfiledropconfig" class="toc-h2 toc-link" data-title="fastFileDropConfig">fastFileDropConfig</a>
                   </li>
               </ul>
           </li>
@@ -1030,8 +1045,45 @@ If you want to use a custom icon, you can replace the <code>type</code> key with
 <p>This option enables on-flight auto-suggestions of questions based on the message being typed by the user.
 <aside class="notice">
 <b><u>Default:</u></b> <code>false</code>
-</aside>
-<br/>
+</aside></p>
+<h2 id='daysbeforedisplayfastqr'>daysBeforeDisplayFastQR</h2>
+<p><u>Type:</u> <code>Number</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">daysBeforeDisplayFastQR</span><span class="p">:</span> <span class="mi">24</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the number of days after which Fast QRs will be displayed again when it has been closed.
+<aside class="notice">
+<b><u>Default:</u></b> <code>0</code>
+</aside></p>
+<h2 id='daysbeforereset'>daysBeforeReset</h2>
+<p><u>Type:</u> <code>Number</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">daysBeforeReset</span><span class="p">:</span> <span class="mi">12</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the number of days since last visit after which chat-window&#39;s messages and local data will be deleted
+<aside class="notice">
+<b><u>Default:</u></b> <code>30</code>
+</aside></p>
+<h2 id='daysbeforeresetid'>daysBeforeResetID</h2>
+<p><u>Type:</u> <code>Number</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">daysBeforeResetID</span><span class="p">:</span> <span class="mi">14</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option sets the number of days since last visit after which chat-window&#39;s local sessionId will be renewed.
+<aside class="notice">
+<b><u>Default:</u></b> <code>30</code>
+</aside></p>
+
+<p><br/>
 <br/></p>
 <h1 id='full-screen'>Full Screen</h1><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
   <span class="p">...</span>
@@ -1335,7 +1387,7 @@ If you want to use a custom icon, you can replace the <code>type</code> key with
   <span class="p">...</span>
 <span class="p">}</span>
 </code></pre>
-<p><code>fastQR</code> is an array that allows to customize the buttons under the speech bubble. It has 3 keys :
+<p><code>fastQR</code> is an array of object that allows to customize the buttons under the speech bubble. Each object has 3 keys :
 <br/>
 <br/>
 - <code>type</code> is a string that sets the type of the button. It must always be set to <code>postback_bubble</code>
@@ -1353,6 +1405,67 @@ OR
 <aside class="notice">
 <b><u>Default:</u></b> `none`
 </aside>
+<h2 id='disablemobilefastqr'>disableMobileFastQR</h2>
+<p><u>Type:</u> <code>Boolean</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">disableMobileFastQR</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This option, if set to true, disables fastQRs on mobile and small sized windows.
+<aside class="notice">
+<b><u>Default:</u></b> <code>false</code>
+</aside></p>
+<h2 id='fastfiledropconfig'>fastFileDropConfig</h2>
+<p><u>Type:</u> <code>Object</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="p">...</span>
+  <span class="nl">pageCustomization</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nl">fastFileDropConfig</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">enable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">title</span><span class="p">:</span> <span class="s2">"Match your CV here"</span><span class="p">,</span>
+      <span class="nx">customText</span><span class="p">:</span> <span class="s2">"Match CV"</span><span class="p">,</span>
+        <span class="nx">enable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">type</span><span class="p">:</span> <span class="s2">"location"</span><span class="p">,</span>
+        <span class="nx">text</span><span class="p">:</span> <span class="s2">"Offers near you 📍"</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>fastFileDropConfig</code> is an object that allows to display a dropzone on the left of chat-window&#39;s bubble when closed (exclusive with <code>fastQR</code>). It has 4 keys :
+<br/>
+<br/>
+- <code>enable</code> is a boolean that activates or deactivates this feature (default: <code>false</code>)
+<br/>
+<br/>
+- <code>title</code> is a string that sets the text on top of the dropzone. If this option is not set, the default text will be displayed. (default: <code>You can submit your CV to start a new search</code>)
+<br/>
+<br/>
+- <code>customText</code> is a string that sets the text inside the dropzone. If this option is not set, the default text will be displayed. (default: <code>Déposez ici !</code>)
+<br/>
+<br/>
+- <code>action</code> is an object that sets an eventual custom action under the dropzone. It has 3 keys :
+<br/>
+&nbsp;&nbsp;-- <code>enable</code> is a boolean that activates or deactivates this feature (default: <code>false</code>)
+<br/>
+&nbsp;&nbsp;-- <code>type</code> is a string that sets the type of the action (default: <code>none</code>, only <code>location</code> is supported for now, which allows to locate user and start a search for offers)
+<br/>
+&nbsp;&nbsp;-- <code>text</code> is a string that sets the text displayed in the action button. (default: <code>none</code>)
+<br/></p>
+
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+<p><img style="display: block; margin:auto" src="images/example-fastFileDropConfig-57ea69a7.png"></p>
 
 <p><br/>
 <br/></p>
